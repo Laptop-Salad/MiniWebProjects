@@ -1,0 +1,10 @@
+h1 {
+    position: absolute;
+    top: 50%; 
+    right: 50%;
+    transform: translate(50%,-50%);
+    font-size: 5rem;
+    background: -webkit-linear-gradient(#eee, #F894A4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
