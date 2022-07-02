@@ -1,0 +1,41 @@
+p {
+    color: #5C1639;
+    animation-name: color-anim;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes color-anim {
+    0% {
+        color: #BA2C73;
+        text-shadow : 1px 1px 10px #BA2C73;
+    }
+    15% {
+        color: #DB3588;
+        text-shadow : 1px 1px 10px #DB3588;
+    }
+    30% {
+        color: #9E78A5;
+        text-shadow : 1px 1px 10px #9E78A5;
+    }
+    45% {
+        color: #81C3D7;
+        text-shadow : 1px 1px 10px #81C3D7;
+    }
+    60% {
+        color: #74B0C2;
+        text-shadow : 1px 1px 10px #74B0C2;
+    }
+    75% {
+        color: #81C3D7;
+        text-shadow : 1px 1px 10px #81C3D7;
+    }
+    90% {
+        color: #9E78A5;
+        text-shadow : 1px 1px 10px #9E78A5;
+    }
+    100% {
+        color: #DB3588;
+        text-shadow : 1px 1px 10px #DB3588;
+    }
+}

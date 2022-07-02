@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="clock.css">
+    <title>Clock</title>
+</head>
+<body class="vw-100 vh-100" onload = "changeTime()" style="background: radial-gradient(#282F44, #191D32) no-repeat;">
+    <div class="w-100 h-100 d-flex justify-content-center align-items-center flex-column">
+        <!-- Time-->
+        <p id="time" style="font-size: 16rem"></p>
+
+        <!-- Date -->
+        <p id="date" style="font-size: 2rem;"></p>
+    </div>  
+
+    <script>
+        // Pause code
+        function sleep(ms) {
+            return new Promise(resolveFunc => setTimeout(resolveFunc, ms));
+        }
+        
+        async function changeTime() {
+            // Set months
+            const monthsArr = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+            const daysArr = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+            // Get date
+            const d = new Date();
+
+            // Get and format times
+            let hours = formatTime(d.getHours());
+            let minutes = formatTime(d.getMinutes());
+            let seconds = formatTime(d.getSeconds());
+            let month = monthsArr[d.getMonth()];
+            let day = daysArr[d.getDay()];
+            let dayOfMonth = d.getDate();
+            let year = d.getFullYear();
+
+            // Set time
+            document.getElementById('time').textContent = hours + ":" + minutes + ":" + seconds;
+            document.getElementById('date').textContent = day + ' ' + dayOfMonth + ' ' + month + ' ' + year;
+
+            // Pause code for 1s and call changeTime()
+            await sleep(1000);
+            changeTime();
+        }
+
+        // Format time by prefixing '0' if necessary
+        function formatTime(i) {
+            if (i < 10) {
+                return "0" + String(i);
+            } else {
+                return i;
+            }
+        }
+    </script>
+</body>
+</html>
