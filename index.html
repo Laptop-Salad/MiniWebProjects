@@ -22,11 +22,12 @@
         function generateCard(elem) {
             const container = document.getElementById('main');
             let index = projectsList.indexOf(elem);
+            let imagePath = projectsList[index].toLowerCase() + '.png';
             const content = `
             <div class="card m-5 w-25">
-                <img class="card-img-top" src="assets/comingsoon.jpg" alt="Card image cap">
+                <img class="card-img-top" src="assets/${imagePath}" alt="App preview">
                 <div class="card-body">
-                  <h4 class="card-title">${elem}</h5>
+                  <h4 class="card-title">${elem} App</h5>
                   <a href="${projectsPath[index]}" class="btn btn-primary">To Project</a>
                 </div>
               </div>
@@ -35,7 +36,7 @@
             container.innerHTML += content;
         }
 
-        const projectsList = ['Clock App'];
+        const projectsList = ['Clock'];
         const projectsPath = ['Clock/clock.html'];
 
         projectsList.forEach(element => generateCard(element));
